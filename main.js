@@ -10,6 +10,13 @@ function getComputerChoice(){
     } else {
         return "Scissors!";
     }
+
+    function getHumanChoice(){
+        const humanChoice = prompt();
+
+        return humanChoice;
+    }
 }
 
-console.log(getComputerChoice());
+return getHumanChoice();
+return getComputerChoice();
