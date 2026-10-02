@@ -22,7 +22,7 @@ questa funzione permette all'utente di scegliere
 tra rock, paper e scissors
 */
 function getHumanChoice(){
-    const humanChoice = prompt();
+    const humanChoice = prompt("rock, paper or scissors");
     if (humanChoice === "rock" ||
         humanChoice === "paper" ||
         humanChoice === "scissors") {
@@ -31,6 +31,3 @@ function getHumanChoice(){
             return "Invalid parameter.";
     }
 }
-
-return getHumanChoice();
-return getComputerChoice();
