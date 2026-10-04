@@ -1,3 +1,7 @@
+//Variabili globali
+let humanScore = 0;
+let computerScore = 0;
+
 console.log("Hello World");
 
 /*
@@ -31,3 +35,27 @@ function getHumanChoice(){
             return "Invalid parameter.";
     }
 }
+
+function playRound(humanChoice, computerChoice){
+    if (humanChoice === "rock" && computerChoice === "scissors" ||
+        humanChoice === "scissors" && computerChoice === "paper" ||
+        humanChoice === "paper" && computerChoice === "rock"
+    ){
+        humanScore++;
+        return "Human win round!";
+    } else if (humanChoice === "rock" && computerChoice === "paper" ||
+        humanChoice === "paper" && computerChoice === "scissors" ||
+        humanChoice === "scissors" && computerChoice === "rock"){
+            computerScore++;
+            return "Computer win round";
+    } else {
+        return "Tie!"
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound("rock", "scissors"));
+console.log(humanScore);
+console.log(computerScore);
