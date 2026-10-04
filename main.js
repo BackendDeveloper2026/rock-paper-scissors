@@ -13,11 +13,11 @@ function getComputerChoice(){
     const pcChoice = Math.random();
 
     if (pcChoice < 0.33) {
-        return "Rock!";
+        return "rock";
     } else if (pcChoice < 0.66) {
-        return "Paper!";
+        return "paper";
     } else {
-        return "Scissors!";
+        return "scissors";
     }
 }
 
@@ -26,16 +26,29 @@ questa funzione permette all'utente di scegliere
 tra rock, paper e scissors
 */
 function getHumanChoice(){
-    const humanChoice = prompt("rock, paper or scissors");
+    const pcChoice = Math.random();
+
+        if (pcChoice < 0.33) {
+            return "rock";
+        } else if (pcChoice < 0.66) {
+            return "paper";
+        } else {
+            return "scissors";
+        }
+
+    /*const humanChoice = prompt("rock, paper or scissors");
     if (humanChoice === "rock" ||
         humanChoice === "paper" ||
         humanChoice === "scissors") {
         return humanChoice;
     } else {
             return "Invalid parameter.";
-    }
+    }*/
 }
 
+/*
+Questa funzione fa si che venga giocato un round tra umano e computer
+*/
 function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock" && computerChoice === "scissors" ||
         humanChoice === "scissors" && computerChoice === "paper" ||
@@ -53,9 +66,19 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+/*
+questa funzione crea un loop di 5 round per una partita
+*/
+function playGame(){
+    for (let i = 0; i < 5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+}
 
-console.log(playRound("rock", "scissors"));
-console.log(humanScore);
-console.log(computerScore);
+//TEST ZONE START
+console.log(playGame());
+console.log("Human score:", humanScore);
+console.log("Computer score:", computerScore);
+//TEST ZONE END
